@@ -33,9 +33,9 @@
         </div>
 
         <div class="flex gap-2 mb-8 overflow-x-auto pb-2">
-            <button class="tab-btn px-5 py-1.5 rounded bg-blue-600 text-white text-sm font-medium whitespace-nowrap">All</button>
-            <button class="tab-btn px-5 py-1.5 rounded bg-white border text-gray-500 text-sm font-medium whitespace-nowrap">Interview</button>
-            <button class="tab-btn px-5 py-1.5 rounded bg-white border text-gray-500 text-sm font-medium whitespace-nowrap">Rejected</button>
+            <button onclick="filterJobs('All')" class="tab-btn px-5 py-1.5 rounded bg-blue-600 text-white text-sm font-medium whitespace-nowrap">All</button>
+            <button onclick="filterJobs('Interview')" class="tab-btn px-5 py-1.5 rounded bg-white border text-gray-500 text-sm font-medium whitespace-nowrap">Interview</button>
+            <button onclick="filterJobs('Rejected')" class="tab-btn px-5 py-1.5 rounded bg-white border text-gray-500 text-sm font-medium whitespace-nowrap">Rejected</button>
         </div>
 
 
@@ -44,7 +44,7 @@
             
             <!-- First Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500">
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500">
                     <i class="fa-solid fa-trash-can"></i>
                 </button>
                 <h4 class="text-xl font-bold text-slate-800">Mobile First Corp</h4>
@@ -54,15 +54,15 @@
                 <p class="text-gray-600 mt-4 mb-6">Build cross-platform mobile applications using React Native. Work on
             products used by millions of users worldwide.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- First Job ENDS here -->
 
             <!-- Second Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">WebFlow Agency</h4>
                 <p class="text-indigo-600 font-medium mb-1">Web Designer & Developer</p>
                 <p class="text-gray-400 text-sm mb-4">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
@@ -70,8 +70,8 @@
                 <p class="text-gray-600 mt-4 mb-6">Create stunning web experiences for high-profile clients. Must have
             portfolio and experience with modern web design trends.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- Second Job ENDS here -->
@@ -79,7 +79,7 @@
 
             <!-- Third Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">DataViz Solutions</h4>
                 <p class="text-indigo-600 font-medium mb-1">Data Visualization Specialist</p>
                 <p class="text-gray-400 text-sm mb-4">Boston, MA • Full-time • $125,000 - $165,000</p>
@@ -87,15 +87,15 @@
                 <p class="text-gray-600 mt-4 mb-6">Transform complex data into compelling visualizations. Required
             skills: D3.js, React, and strong analytical thinking.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- Third Job ENDS here -->
 
             <!-- Fourth Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">CloudFirst Inc</h4>
                 <p class="text-indigo-600 font-medium mb-1">Backend Developer</p>
                 <p class="text-gray-400 text-sm mb-4">Seattle, WA • Full-time • $140,000 - $190,000</p>
@@ -103,15 +103,15 @@
                 <p class="text-gray-600 mt-4 mb-6">Design and maintain scalable backend systems using Python and AWS.
             Work with modern DevOps practices and cloud infrastructure.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- Fourth Job ENDS here -->
 
             <!-- 5th Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">Innovation Labs</h4>
                 <p class="text-indigo-600 font-medium mb-1">UI/UX Engineer</p>
                 <p class="text-gray-400 text-sm mb-4">Austin, TX • Full-time • $110,000 - $150,000</p>
@@ -120,15 +120,15 @@
             products. Strong design skills and frontend development expertise
             required.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- 5th Job ENDS here -->
 
             <!-- 6th Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">MegaCorp Solutions</h4>
                 <p class="text-indigo-600 font-medium mb-1">JavaScript Developer</p>
                 <p class="text-gray-400 text-sm mb-4">New York, NY • Full-time • $130,000 - $170,00</p>
@@ -137,15 +137,15 @@
             We offer competitive compensation, health insurance, and
             professional development opportunities.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- 6th Job ENDS here -->
 
             <!-- 7th Job STARTS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">StartupXYZ</h4>
                 <p class="text-indigo-600 font-medium mb-1">Full Stack Engineer</p>
                 <p class="text-gray-400 text-sm mb-4">Remote • Full-time • $120,000 - $160,000</p>
@@ -154,15 +154,15 @@
             Experience with Node.js and React required. Great benefits and
             equity package included.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
             <!-- 7th Job ENDS here -->
 
             <!-- 8th Job ENDS here -->
             <div class="job-card bg-white p-8 rounded-xl border border-gray-100 relative" data-status="">
-                <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="deleteCard(this)" class="absolute top-6 right-8 text-gray-300 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 <h4 class="text-xl font-bold text-slate-800">TechCorp Industries</h4>
                 <p class="text-indigo-600 font-medium mb-1">Senior Frontend Developer</p>
                 <p class="text-gray-400 text-sm mb-4">San Francisco, CA • Full-time • $130,000 - $175,000</p>
@@ -171,8 +171,8 @@
             scalable web applications using React and TypeScript. You will work
             with a talented team on cutting-edge projects.</p>
                 <div class="flex gap-2">
-                    <button class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
-                    <button class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
+                    <button onclick="setStatus(this, 'Interview')" class="border-2 border-emerald-400 text-emerald-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-emerald-500 hover:text-white transition-all">Interview</button>
+                    <button onclick="setStatus(this, 'Rejected')" class="border-2 border-red-400 text-red-500 px-4 py-1.5 rounded font-bold text-xs uppercase hover:bg-red-500 hover:text-white transition-all">Rejected</button>
                 </div>
             </div>
         </div>
@@ -186,5 +186,7 @@
         </div>
     </div>
 
+
+    <script src="./script.js"></script>
 </body>
 </html>
